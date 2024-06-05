@@ -50,11 +50,11 @@ public class ReportManager {
 		}
 	}
 
-	public static String takeScreenshot(WebDriver driver, String screenshotName) {
+	public static String takeScreenshot(WebDriver driver, String screenshotsName) {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		String destination = System.getProperty("user.dir") + "FlipKart\\screenshots" + screenshotName + ".png";
+		String destination = System.getProperty("user.dir") + "/screenshots/FlipKart_" + screenshotsName + ".png";
 		try {
 			Files.createDirectories(Paths.get(System.getProperty("user.dir") + "/screenshots/"));
 			Files.copy(source.toPath(), Paths.get(destination));
